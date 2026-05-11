@@ -1,0 +1,55 @@
+{
+    "name": "sendry/sendry",
+    "description": "Official PHP SDK for the Sendry email API, with first-class Laravel support",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["email", "sendry", "email-api", "transactional-email", "laravel", "sdk"],
+    "homepage": "https://sendry.online",
+    "support": {
+        "issues": "https://github.com/sendry-dev/sendry-php/issues",
+        "source": "https://github.com/sendry-dev/sendry-php",
+        "docs":   "https://docs.sendry.online/sdks/php"
+    },
+    "authors": [
+        { "name": "Sendry", "email": "support@sendry.online" }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit":         "^10.5",
+        "orchestra/testbench":     "^8.0 || ^9.0",
+        "phpstan/phpstan":         "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sendry\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sendry\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sendry\\Laravel\\SendryServiceProvider"
+            ],
+            "aliases": {
+                "Sendry": "Sendry\\Laravel\\Facades\\Sendry"
+            }
+        }
+    },
+    "scripts": {
+        "test":     "phpunit",
+        "phpstan":  "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
