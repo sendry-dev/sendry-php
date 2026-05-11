@@ -28,4 +28,15 @@ final class Emails extends Resource
     {
         return $this->client->get('/v1/emails', $query) ?? [];
     }
+
+    /** @param array<string, mixed> $payload */
+    public function sendMarketing(array $payload): array
+    {
+        return $this->client->post('/v1/emails/marketing', $payload) ?? [];
+    }
+
+    public function cancel(string $emailId): array
+    {
+        return $this->client->post("/v1/emails/{$emailId}/cancel") ?? [];
+    }
 }
