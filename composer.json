@@ -21,7 +21,11 @@
     "require-dev": {
         "phpunit/phpunit":         "^10.5",
         "orchestra/testbench":     "^8.0 || ^9.0",
-        "phpstan/phpstan":         "^1.10"
+        "phpstan/phpstan":         "^1.10",
+        "symfony/mailer":          "^6.4 || ^7.0"
+    },
+    "suggest": {
+        "symfony/mailer": "Required (^6.4 || ^7.0) only if you use the Symfony / Laravel Mail transport (Sendry\\Symfony\\SendryTransport). Laravel apps already ship symfony/mailer."
     },
     "autoload": {
         "psr-4": {

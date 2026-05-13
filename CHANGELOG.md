@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **Symfony Mailer / Laravel Mail transport** — `Sendry\Symfony\SendryTransport` + `SendryTransportFactory` for the `sendry://` DSN. The Laravel service provider auto-registers `'transport' => 'sendry'` so apps can use the Mail facade end-to-end (`Mail::to($user)->send(new WelcomeMail($user))`) without writing a custom transport. Closes the gap where `docs.sendry.online/sdks/php` documented a mail driver that wasn't actually shipped.
+
+### Notes
+
+- `symfony/mailer` is a `suggest` dep (only required if you opt into the transport). Laravel apps already ship it transitively.
+
 ## [0.1.0] - 2026-05-11
 
 ### Added
